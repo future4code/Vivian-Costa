@@ -1,0 +1,47 @@
+* {
+    margin: auto;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.cabecalho {
+    background-color: rgb(61, 24, 121);
+    color: white;
+    padding: 15px;
+    height: 150px;
+    text-align: center;
+}
+.menu {
+    list-style-type: none;
+    float:right;
+    display: inline;
+    margin: 0;
+    display: block;
+    padding: 8px;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-top: 100px;
+}
+
+.nome{
+    display: inline;
+}
+.sobre,.social {
+    text-align: center;
+    margin-top: 50px;
+}
+.social{
+    margin-top: 20%;
+}
+.social-medias {
+    background-color: rgb(61, 24, 121);
+    padding: 20px;
+    align-items: center;
+}
+img, .social {
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    padding: 15px; 
+}
