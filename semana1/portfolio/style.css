@@ -1,0 +1,33 @@
+body> {
+    background: url(./photo/fundo2.jpg);
+    text-align: center;
+    font-weight: bold;
+    font-size: small;
+}
+header {
+    /*display: flex;*/
+    width: 100%;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+header {
+    text-align: center;
+}
+img {
+    border-radius: 50%;
+    width: 170px;
+    height: 200px;
+    display: inline;
+   
+}
+h1, .frase{
+    display: inline-block;
+    padding-left: 40px;
+    margin-top: 70px;
+}
+.sobre, .cursos, .portifolio, .habilidades, .midias{
+    text-align: center;
+    font-size: larger;
+    text-decoration: none;  
+}
