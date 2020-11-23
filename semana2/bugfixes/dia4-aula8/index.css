@@ -29,9 +29,9 @@ img {
     width: 100px;
 }
 
-/*div>p:first-child {
-    display: inline;
-} /*impactou no botao da home */
+div>p:first-child {
+    
+} 
 
 div img {
     background: black;
@@ -55,7 +55,9 @@ div img {
     text-align: center;
     padding-top: 40px;
 }
-
+p {
+    display: block;
+}
 .icone {
     height: 15px;
 }
