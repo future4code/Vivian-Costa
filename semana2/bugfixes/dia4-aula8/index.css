@@ -11,6 +11,11 @@ h2 {
     text-align: center;
 }
 
+ol {
+    list-style-type: decimal;
+    display: inline-block;
+}
+
 input {
     height: 20px;
     width: 500px;
@@ -27,15 +32,10 @@ img {
     width: 100px;
 }
 
-div>p:first-child {
+/*div>p:first-child {
     
-} 
-.lista {
-    list-style: decimal;
-    display: inline-block;
-    text-align: start;
-    padding: 1vh;
-}
+} */
+
 div img {
     background: black;
 }
