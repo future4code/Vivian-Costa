@@ -1,0 +1,485 @@
+1 - #pond {
+  display: flex;
+justify-content: flex-end;
+}
+
+2 - #pond {
+  display: flex;
+justify-content: center;
+}
+
+3- #pond {
+  display: flex;
+justify-content: space-around;
+}
+
+4- #pond {
+  display: flex;
+justify-content: space-between;
+}
+
+5- Agora use align-items para levar os sapos ao fundo da lagoa. Essa propriedade CSS alinha os itens verticalmente e aceita os seguintes valores:
+
+flex-start: Itens se alinham na parte de cima do container.
+flex-end: Itens se alinham na parte de baixo do container.
+center: Itens se alinham no centro vertical do container.
+baseline: Items se alinham na linha da base do container.
+stretch: Itens se esticam para preencher o container.
+
+#pond {
+  display: flex;
+align-items: flex-end;
+}
+
+6- #pond {
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+
+7- #pond {
+  display: flex;
+justify-content: space-around;
+align-items: flex-end;
+} 
+
+8- Os sapos precisam ficar na mesma ordem das vitórias-régias usando flex-direction. Esta propriedade CSS define a direção em que os itens são posicionados no container e aceita os seguintes valores:
+
+row: Itens são posicionados na mesma direção do texto.
+row-reverse: Itens são posicionados na direção oposta à do texto.
+column: Itens são posicionados de cima para baixo.
+column-reverse: Itens são posicionados de baixo para cima.
+
+#pond {
+  display: flex;
+flex-direction: row-reverse;
+}
+
+9- #pond {
+  display: flex;
+flex-direction: column;
+}
+
+10- #pond {
+  display: flex;
+flex-direction: row-reverse;
+justify-content: flex-end;
+}
+
+11- #pond {
+  display: flex;
+Flex-direction: column;
+justify-content: flex-end;
+}
+
+12- #pond {
+  display: flex;
+flex-direction: column-reverse;
+justify-content: space-between
+}
+
+13- #pond {
+  display: flex;
+flex-direction: row-reverse;
+justify-content: center;
+align-items: flex-end;
+}
+
+14- #pond {
+  display: flex;
+}
+
+.yellow {
+order: 1
+}
+
+15- #pond {
+  display: flex;
+}
+
+.red {
+order:-4;
+}
+
+16- #pond {
+  display: flex;
+  align-items: flex-start;
+}
+
+.yellow {
+align-self: flex-end;
+}
+
+17- #pond {
+  display: flex;
+  align-items: flex-start;
+}
+
+.yellow {
+order: 3;
+align-self: flex-end;
+}
+
+18- Ah, não! Os sapos estão todos apertados em uma única linha de vitórias-régias. Espalhe-os usando a propriedade flex-wrap, que aceita os seguintes valores:
+
+nowrap: Todos os itens são apertados em uma única linha.
+wrap: Itens se separam em linhas adicionais.
+wrap-reverse: Itens se separam em linhas adicionais em reverso.
+
+#pond {
+  display: flex;
+flex-wrap: wrap;
+}
+
+18- #pond {
+  display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+}
+
+19- #pond {
+  display: flex;
+flex-flow: column wrap;
+}
+
+20- Os sapos estão espalhados por toda a lagoa, mas as vitórias-régias estão agrupadas no topo. Você pode usar align-content para definir como múltiplas linhas devem ser espaçadas uma das outras. Essa propriedade recebe os seguintes valores:
+
+flex-start: Linhas são agrupadas no topo do container.
+flex-end: Linhas são agrupadas no fundo do container.
+center:Linhas são agrupadas no centro vertical do container.
+space-between: Linhas são posicionadas com espaço igual entre elas.
+space-around: Linhas são posicionadas com espaço igual em torno delas.
+stretch: Linhas se esticam para preencher o container.
+Isso pode ser confuso, mas align-content determina o espaçamento entre linhas, enquanto align-items determina como as linhas como um todo são alinhadas dentro do container. Quando há só uma linha, align-content não tem nenhum efeito.
+
+#pond {
+  display: flex;
+  flex-wrap: wrap;
+align-content: flex-start;
+}
+
+21- #pond {
+  display: flex;
+  flex-wrap: wrap;
+align-content: flex-end;
+}
+
+22- #pond {
+  display: flex;
+  flex-wrap: wrap;
+flex-direction: column-reverse;
+align-content: center
+}
+
+23- #pond {
+  display: flex;
+  flex-wrap: wrap;
+flex-direction: column-reverse;
+align-content: center
+}
+
+24-#pond {
+  display: flex;
+flex-wrap: wrap-reverse;
+flex-direction: column-reverse;
+justify-content: center;
+align-content: space-between;
+}
+
+Você venceu! Graças à sua maestria de flexbox, você foi capaz de ajudar todos os sapos a chegar até suas vitórias-régias. Veja como eles estão felizes!
+
+
+Grid Garden
+
+1- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+grid-column-start: 3;
+}
+
+2- Opa, parece que há ervas daninhas crescendo no canto da sua horta. Use grid-column-start para envenená-las. Note que as ervas daninhas começam na 5ª linha vertical da grade.
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#poison {
+grid-column-start: 5;
+}
+
+3- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 1;
+grid-column-end: 4;
+}
+
+4- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 5;
+grid-column-end: 2;
+}
+
+5- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 1;
+grid-column-end: -2;
+}
+
+6- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#poison {
+grid-column-start: 4;
+}
+
+7- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 2;
+grid-column-end: span 2;
+}
+
+8- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 1;
+grid-column-end: span 5;
+}
+
+9- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+grid-column-start: span 3;
+  grid-column-end: 6;
+}
+
+10- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+grid-column: 4/6;
+}
+
+11- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+grid-column: span 3/5;
+}
+
+12- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+grid-row-start: 3;
+}
+
+13- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+grid-row: 3/6;
+}
+
+14- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#poison {
+grid-column: 2;
+grid-row: 5;
+}
+
+15- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+grid-column: 2/6;
+grid-row: 1/6;
+}
+
+16- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+grid-area: 1/2/4/6;
+}
+
+17-#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water-1 {
+  grid-area: 1 / 4 / 6 / 5;
+}
+
+#water-2 {
+grid-area: 2/3/5/6;
+}
+
+18- Se um item da grade não é explicitamente colocada com grid-area, grid-column, grid-row, etc., eles são colocados automaticamente de acordo com a ordem no código fonte. A gente pode mudar isso usando a propriedade order, que é uma das vantagens das grades ao invés de leiautes baseados em tabelas.
+
+Por padrão, todos os itens da grade tem um order de 0, mas isso pode ser definido para qualquer valor positivo ou negativo, similar a z-index.
+
+Nesse momento, as cenouras da segunda coluna estão sendo envenenadas e as ervas daninhas da última coluna estão sendo irrigadas. Altere o valor order do veneno para deixar isso na ordem certa!
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.water {
+  order: 0;
+}
+
+#poison {
+order: 4;
+}
+
+19- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.water {
+  order: 0;
+}
+
+.poison {
+order: -5;
+}
+
+20- #garden {
+  display: grid;
+grid-template-columns: 50% 
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+21- #garden {
+  display: grid;
+grid-template-columns: repeat(8, 12.5%);
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+22- #garden {
+  display: grid;
+grid-template-columns: 100px 3em 40%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+23- #garden {
+  display: grid;
+grid-template-columns: 1fr 5fr;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+24- #garden {
+  display: grid;
+grid-template-columns: 50px repeat(3, 1fr) 50px;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+25- #garden {
+  display: grid;
+grid-template-columns: 75px 3fr 2fr;
+  grid-template-rows: 100%;
+}
+
+26- #garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+grid-template-rows: 50px 0 0 0;
+}
+
+#water {
+  grid-column: 1 / 6;
+  grid-row: 5 / 6;
+}
+
+27- #garden {
+  display: grid;
+grid-template: 60% 40% / 200px;
+}
+
+#water {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+28- #garden {
+  display: grid;
+grid-template: 1fr 50px/ 1fr 4fr 
+}
+
+RID GARDEN
+Você ganhou! Com o poder do CSS grid, você foi capaz de colher cenouras suficientes para o Froggy fazer seu mundialmente famoso bolo de 20 cenouras. O que, você esperava um amigo diferente?
