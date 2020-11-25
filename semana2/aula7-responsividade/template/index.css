@@ -1,0 +1,131 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+/*#main-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}*/
+
+/*div {
+    border: 1px solid black;
+}*/
+
+#first-block {
+    background-color: red;
+    height: 150px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.containers-1 {
+    display: flex;
+    margin: 20px 10px 10px;
+    justify-items: center;
+}
+
+.containers-2 {
+    display: flex;
+    margin: 20px 10px 10px;
+}
+
+.blue-block {
+    background-color: blue;
+    flex: 1;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    
+}
+
+.yellow-block {
+    background-color: yellow;
+    flex: 1;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    
+}
+
+.green-block {
+    background-color: green;
+    flex: 1;
+    flex: 1;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+.containers-3 {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 10px 10px;
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    width: 280px;
+    height: 280px;
+    flex: 1;
+    margin-inline: 20px;
+    text-align: center;
+    border: 1px solid white;
+
+}
+
+.containers-4 {
+    display: flex;
+    margin: 20px 10px 10px;
+}
+
+.white-block {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    flex: 1;
+    margin-inline: 20px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+      #first-block{
+        min-height: 100px;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+    .containers-1 {
+        min-height: 200px;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        
+    }
+    .containers-2 {
+        min-height: 200px;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .containers-3 {
+        min-height: 200px;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+        
+    }
+    .containers-4 {
+        min-height: 200px;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+        
+    }
+}
