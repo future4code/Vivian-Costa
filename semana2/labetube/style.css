@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+header {
+    background-color: orange;
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 5px 5px;
+    padding: 2%;
+}
+header> h1 {
+    font-size: 2em;
+}
+#home {
+    text-decoration: none;
+    font-size: xx-large;
+    color: black;
+}
+#home:hover {
+    text-decoration: underline overline; 
+	color:white;
+}
+#lupa {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+}
+#divBusca{
+    background-color: white;
+    border: solid 1px;
+    border-radius: 35px;
+    width: 238px;
+    height: 30px;
+    margin-top: 20px;
+  }
+  
+  #txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-style:italic;
+    font-size:18px;
+    border:none;
+    height:32px;
+  }
+
+main {
+    display: flex;
+    width: 100%;
+    padding: 3%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    
+} 
+.container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+   
+} 
+.foto {
+    margin: 15px;
+    width: 20vw;
+    height: 20vw;
+}
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    background-color: rgb(240, 182, 76);
+    text-align: left;
+    font-size: x-large;
+    padding: 2%;
+    
+}
+.container-video {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding: 5% 15%;
+}
+.container-video h1 {
+    text-align: center;
+}
+.details {
+    justify-content: center;
+    align-items: center;
+}
+#details-title {
+    text-align: center;
+}
+.video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+@media screen and (min-width: 200px) and (max-width: 600px) {
+    .container, .foto {
+        justify-content: center;
+        flex-direction: column;
+    }
+    .detalhes {
+        display: flex;
+        width: 50%;
+        padding: 25px;
+    }
+    .detalhes .video {
+        width: 50%;
+        height: 400px;
+    } 
+}
+
+
