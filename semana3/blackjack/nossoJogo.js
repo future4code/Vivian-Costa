@@ -1,62 +1,49 @@
-/**
- * EXEMPLO DE UTILIZAÇÃO DA 'comprarCarta'
- */
- 
-const carta = comprarCarta(); // Sorteia uma carta. Por exemplo, o rei de ouros
-const usuario1 = comprarCarta()
-const usuario2 = comprarCarta()
+console.log("Bem Vindo ao jogo de BlackJack!")
 
-// console.log(carta.texto) // imprime o texto da carta. Exemplo: "K♦️" (indica "K" de ouros)
-// console.log(carta.valor) // imprime o valor da carta (um número). Exemplo: 10 (dado que "K" vale 10)
+let jogo = confirm("Quer iniciar uma nova rodada?")
 
+if(jogo) {
+   let carta1Usuario = comprarCarta()
+   let carta2Usuario = comprarCarta ()
+   let carta1Pc = comprarCarta()
+   let carta2Pc = comprarCarta()
 
+   let somaUsuario = carta1Usuario.valor + carta2Usuario.valor
+   let somaPc = carta1Pc.valor + carta2Pc.valor
 
-const somaUsuario1 = carta.valor + carta.texto
-const somaPc = carta.valor + carta.valor
+   console.log(`Usuário - cartas:  ${carta1Usuario.texto} ${carta2Usuario.texto} - ${somaUsuario}`)
+   console.log(`Computador - cartas: "${carta1Pc.texto} ${carta2Pc.texto} - ${somaPc}`)
 
-if(confirm("Bem Vindo ao jogo de BlackJack!")){
-   //if(usuario1 === "ok")
-      console.log("Usuário - cartas: ", usuario1.texto , "- pontuação: ", somaUsuario1 + " ")
-      console.log("Computador - cartas: ",  usuario2.texto,  "- pontuação: ", somaPc) 
-   if(confirm("Quer iniciar uma nova rodada?")){
-      console.log("Usuário - cartas:", usuario1.texto,  "- pontuação: ", somaUsuario1 + " ")
-      console.log("Computador - cartas:", usuario2.texto,  "- pontuação: ", somaPc + " ")
-   } 
-   if(somaUsuario1 > somaPc){
-      console.log("Pc ganhou")
+   if(somaUsuario > somaPc){
+      console.log("O usuario ganhou!")
+   } else if(somaPc > somaUsuario){
+      console.log("O computador ganhou!")
+   } else if(somaUsuario === somaPc) {
+      console.log("Empatou!")
    }
-   else {
-      console.log ("Usuario ganhou!")
-   } 
-} 
-
-else {
+   if(confirm("Quer iniciar uma nova rodada?")){
+      let carta1Usuario = comprarCarta()
+      let carta2Usuario = comprarCarta ()
+      let carta1Pc = comprarCarta()
+      let carta2Pc = comprarCarta()
+   
+      let somaUsuario = carta1Usuario.valor + carta2Usuario.valor
+      let somaPc = carta1Pc.valor + carta2Pc.valor
+   
+      console.log(`Usuário - cartas:  ${carta1Usuario.texto} ${carta2Usuario.texto} - ${somaUsuario}`)
+      console.log(`Computador - cartas: "${carta1Pc.texto} ${carta2Pc.texto} - ${somaPc}`)
+   
+      if(somaUsuario > somaPc){
+         console.log("O usuario ganhou!")
+      } else if(somaPc > somaUsuario){
+         console.log("O computador ganhou!")
+      } else if(somaUsuario === somaPc) {
+         console.log("Empatou!")
+      }
+       else {
+          console.log("Fim de Jogo")
+       }
+} else {
    console.log("Fim de jogo!")
 }
-
-
-
-
-
-
-// { "e o segundo é " + usuario2.valor + carta.texto
-//    while(confirm){
-//          console.log("Nova Rodada", carta.carta )
-//          if(confirm("Quer iniciar uma nova rodada? ")){
-//            // console.log("Nova Rodada", carta.carta )
-//          }else {
-//             console.log("O jogo acabou!")
-//          }}
-//       //console.log(confirm)
-//    } else {
-//          console.log("O jogo acabou!")
-//       }
-
-
-// while(quantidadeAtual < quantidadeTotal){
-//    let linha = ""
-//    for(let asteriscos = 0; asteriscos < quantidadeAtual + 1; asteriscos++){
-//      linha += "0"
-//    }
-//    console.log(linha)
-//    quantidadeAtual++ //
+}
