@@ -39,18 +39,37 @@
 
 //Exercicio 3
 
-const numeros = [25, 12, 55, 64, 121, 44, 11, 84, 51, 48, 14, 73, 111, 283]; //foi criada uma lista com diversos numeros
-const array1 = []; // essa lista esta vazia, ela sera para armazenar os numeros pares da variavel numeros
-const array2 = []; // essa lista esta vazia, ela sera para armazenar os numeros impares da variavel numeros
+// const numeros = [25, 12, 55, 64, 121, 44, 11, 84, 51, 48, 14, 73, 111, 283]; //foi criada uma lista com diversos numeros
+// const array1 = []; // essa lista esta vazia, ela sera para armazenar os numeros pares da variavel numeros
+// const array2 = []; // essa lista esta vazia, ela sera para armazenar os numeros impares da variavel numeros
 
-for(let numero of numeros){ //nessa etapa, foi utilizada a sintaxe for of, dentro do for ja foi criada a variavel numero e atribuida a variavel numeros
-    if(numero %2 === 0){ //nessa etapa, o programa verifica todos os numeros da lista que possui o resto da divisao igual a zero, ou seja, se sao numeros pares
-        array1.push(numero)// aqui sera armazenados todos os numeros pares que a linha acima verificou
-    } else { //o programa ira separar tudo que nao esta conforme a condicao passada, nesse caso, ira ler os numero impares
-        array2.push(numero)//aqui sera armazenados os numeros impares
+// for(let numero of numeros){ //nessa etapa, foi utilizada a sintaxe for of, dentro do for ja foi criada a variavel numero e atribuida a variavel numeros
+//     if(numero %2 === 0){ //nessa etapa, o programa verifica todos os numeros da lista que possui o resto da divisao igual a zero, ou seja, se sao numeros pares
+//         array1.push(numero)// aqui sera armazenados todos os numeros pares que a linha acima verificou
+//     } else { //o programa ira separar tudo que nao esta conforme a condicao passada, nesse caso, ira ler os numero impares
+//         array2.push(numero)//aqui sera armazenados os numeros impares
+//     }
+// }
+
+// console.log("A quantidade total de numeros e: ", numeros.length) // o codigo ira imprimir o total de numeros dentro da lista
+// console.log(array1.length)// o codigo ira imprimir uma nova lista, apenas com os numeros pares
+// console.log(array2.length)// o codigo ira imprimir uma nova lista, apenas com os numeros impares
+
+//Exercicio 4
+
+const numeros = [25, 12, 55, 64, 121, 44, 11, 84, 51, 48, 14, 73, 111, 283, 1, 99, 13, 31, 83, 131, 1, 1.1, -10, 25, 1590];
+//foi criada uma lista com diversos numeros
+
+let numero1 = Infinity //acredito que esse valor infinity foi atribuido a variavel numero1 para conseguir guardar valores negativos e numeros com postos flutuantes
+let numero2 = 0; //aqui sera armazenado valores positivos
+
+for(let numero of numeros){ // o programa ira percorrer a lista de numeros com a condicao de encontrar o menor numero e atribuir a variavel numero1
+    if(numero < numero1){  
+        numero1 = numero; //nesse processo atribuimos todos os valores da numero1 para a variavel numero
+    }
+    if(numero > numero2){ // o programa ira percorrer a lista de numeros com a condicao de encontrar o maior numero e atribuir a variavel numero2
+        numero2 = numero;
     }
 }
-
-console.log("A quantidade total de numeros e: ", numeros.length) // o codigo ira imprimir o total de numeros dentro da lista
-console.log(array1.length)// o codigo ira imprimir uma nova lista, apenas com os numeros pares
-console.log(array2.length)// o codigo ira imprimir uma nova lista, apenas com os numeros impares
+console.log(numero1) // ira imprimir o menor numero da lista
+console.log(numero2) // ira imprimir o maior numero da lista
