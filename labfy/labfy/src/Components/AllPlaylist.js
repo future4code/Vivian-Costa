@@ -4,7 +4,8 @@ import {baseUrl, axiosConfig} from '../parametros'
 
 export class AllPlaylist extends React.Component {
     state = {
-        all: []
+        all: [],
+        id: []
     }
 
     componentDidMount = () => {
@@ -12,17 +13,29 @@ export class AllPlaylist extends React.Component {
     }
 
     getAllPlaylist = () => {
-        axios.get(baseUrl, axiosConfig)
-        .then((res) => {
-            this.setState({all: res.data.result.list})
-        })
-        .catch((err) => {
-        })
+    axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists", {
+        headers: {
+            Authorization: 'vivian-costa-epps'
+        }   
+    }) 
+    .then ((res) => {
+        this.setState({all: res.data.result.list})
+        this.setState({id: res.data.result.id})
+    })
+    .catch((err) => {
+        alert('Playlist nao encontrada!' + err.message)
+    })
+
+       
     }
 
-    deletePlaylist = (Id)  => {
-        console.log(`${baseUrl}/: ${Id}`)
-        axios.delete(`${baseUrl}/ ${Id}`, axiosConfig)
+    deletePlaylist = (id)  => {
+        console.log()
+        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId ${id}`, {
+            headers: {
+                Authorization: 'vivian-costa-epps'
+            }
+        })
         .then((res) => {
             this.getAllPlaylist()
            
@@ -43,7 +56,7 @@ export class AllPlaylist extends React.Component {
                    return (
                       <div> 
                         <p>{allplay.name}</p>
-                        <button onClick={() => {this.deletePlaylist(allplay.Id)}}>X</button>
+                        <button onClick={() => {this.deletePlaylist(allplay.id)}}>X</button>
                       </div>
                    )
                })}
