@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
+
 const HomeContainer = styled.div `
 background-color: #F5F5F5;
 color:#000;
