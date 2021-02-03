@@ -24,7 +24,7 @@ export function LoginPage (){
 
         if(token) {
             history.push("/trip/details")
-        } 
+        }  
     }, [history]);
 
     const login = () => {
