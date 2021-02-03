@@ -3,7 +3,7 @@ export const goToHomePage = (history) => {
   };
 
   export const goToTripsPage = (history) => {
-    history.push("/trips/list");
+    history.push("/trip/list");
   };  
 
   export const goToFormPage = (history) => {
@@ -15,9 +15,9 @@ export const goToHomePage = (history) => {
   };  
 
   export const goToCreateTripPage = (history) => {
-    history.push("/trips/create");
+    history.push("/trip/create");
   };  
 
   export const goToDetailsTripPage = (history) => {
-    history.push("/trips/details/viagem");
+    history.push("/trip/details");
   };  

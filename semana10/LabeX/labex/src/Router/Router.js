@@ -33,15 +33,16 @@ export function App() {
           <Route exact path='/login'>
              <LoginPage /> 
           </Route>
-          <Route exact path='/trips/create'>
+          <Route exact path='/trip/create'>
              <CreateTripPage /> 
-          </Route>
-          <Route exact path='/trips/list'>
-             <ListTripe /> 
           </Route>
           <Route exact path='/trip/details'>
              <TripDetailsPage /> 
           </Route>
+          <Route exact path='/trip/list'>
+             <ListTripe /> 
+          </Route>
+         
         </Switch>
         <FooterPage />
       </BrowserRouter>
