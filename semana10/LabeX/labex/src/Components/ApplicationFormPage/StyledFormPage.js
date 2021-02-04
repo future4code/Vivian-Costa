@@ -15,7 +15,7 @@ height: 300px;
 padding: 15%;
 display: flex;
 `
-export const MainForm = styled.div `
+export const MainForm = styled.form `
 border-radius: 5px;
 background-color: #f2f2f2;
 box-sizing: border-box;
@@ -27,6 +27,13 @@ margin-left: 2%;
 margin-right: 17%;
 `
 export const InputTextForm = styled.input `
+width: 50%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+resize: vertical;
+`
+export const Countries = styled.select `
 width: 50%;
 padding: 12px;
 border: 1px solid #ccc;

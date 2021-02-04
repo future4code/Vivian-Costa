@@ -48,7 +48,7 @@ export function LoginPage (){
         <LoginContainer>
         <MainLogin>
         <TitleLogin>Login</TitleLogin> 
-        <h4>E-mail <InputTextLogin value={email} onChange={handleEmail} type='text'></InputTextLogin>  </h4>
+        <h4>E-mail <InputTextLogin value={email} onChange={handleEmail} type='email'></InputTextLogin>  </h4>
         <h4>Senha  <InputTextLogin value={password} onChange={handlePassword} type='password'></InputTextLogin> </h4>
         <ButtonLogin onClick={login}>Enviar</ButtonLogin>
         </MainLogin>

@@ -5,7 +5,8 @@ import { goToFormPage } from "../../Router/Coordinator";
 
 export  function ListTripe (){
     const [allTrip, setAlltrip] = useState([])
-    const history = useHistory ();
+    const history = useHistory();
+    
 
     useEffect(() => {
         axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/viviancosta-epps/trips")

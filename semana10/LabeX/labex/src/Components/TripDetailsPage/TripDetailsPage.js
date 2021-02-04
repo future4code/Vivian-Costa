@@ -3,7 +3,6 @@ import axios from 'axios';
 import {useProtectedRoute} from '../../Hooks/useProtectedRoute'
 import { goToTripsPage, goToCreateTripPage, goToDetailsTripPage  } from "../../Router/Coordinator";
 import { useHistory } from "react-router-dom";
-
 export function TripDetailsPage (){
     const [trip, setTrip] = useState({})
     useProtectedRoute();
