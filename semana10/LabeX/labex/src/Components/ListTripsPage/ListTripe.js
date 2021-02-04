@@ -2,17 +2,19 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import { goToFormPage } from "../../Router/Coordinator";
-import { useGetTrip } from "../../Hooks/useProtectedRoute";
+
 export  function ListTripe (){
     const [allTrip, setAlltrip] = useState([])
-    const history = useHistory()
-    
-    
-        useGetTrip()
-    
+    const history = useHistory ();
 
     useEffect(() => {
-   useGetTrip()
+        axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/viviancosta-epps/trips")
+        .then((res) => {
+            setAlltrip(res.data.trips)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
 
     }, []) 
        
