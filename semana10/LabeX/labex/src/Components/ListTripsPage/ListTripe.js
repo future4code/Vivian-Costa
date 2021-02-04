@@ -2,29 +2,20 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import { goToFormPage } from "../../Router/Coordinator";
-
+import { useGetTrip } from "../../Hooks/useProtectedRoute";
 export  function ListTripe (){
     const [allTrip, setAlltrip] = useState([])
+    const history = useHistory()
+    
+    
+        useGetTrip()
     
 
     useEffect(() => {
-        axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/viviancosta-epps/trips")
-        .then((res) => {
-            alert('Efetuado com sucesso')
-            setAlltrip(res.data.trips)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
+   useGetTrip()
 
     }, []) 
        
-    
-
-    const history = useHistory()
-    const goToForm = () => {
-        history.push("//application-form")
-    }
 
     return (
         <div>
@@ -36,7 +27,7 @@ export  function ListTripe (){
                     <p>Planeta: {trip.planet}</p>
                     <p>Por {trip.durationInDays} dias</p>
                     <p>Partida: {trip.date}</p>
-                    <button onClick={ goToForm}>Cadastre-se</button>
+                    <button onClick={() => goToFormPage(history)}>Cadastre-se</button>
                     </div>
                 )
                

@@ -13,3 +13,12 @@ export const useProtectedRoute = () => {
     }, [history]);
 };
 
+export const useGetTrip = () => {
+    axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/viviancosta-epps/trips")
+    .then((res) => {
+        setAlltrip(res.data.trips)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}

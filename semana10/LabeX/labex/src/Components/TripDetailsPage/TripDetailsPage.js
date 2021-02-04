@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useProtectedRoute} from '../../Hooks/useProtectedRoute'
+import { goToTripsPage, goToCreateTripPage, goToDetailsTripPage  } from "../../Router/Coordinator";
+import { useHistory } from "react-router-dom";
 
 export function TripDetailsPage (){
     const [trip, setTrip] = useState({})
     useProtectedRoute();
+    const history = useHistory();
 
     useEffect(() => {
       getTripDetail()
@@ -34,6 +37,7 @@ export function TripDetailsPage (){
            <h1>Detalhes da viagem</h1>
            <h2>{trip.name}</h2>
            <p>{trip.description}</p>
+           < button onClick={() => goToCreateTripPage(history)}>Criar Viagem </button>
         </div>
     )
 }
