@@ -36,7 +36,7 @@ export function LoginPage (){
         axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/viviancosta-epps/login', body)
         .then((res) => {
             localStorage.setItem("token", res.data.token);
-            history.push("/trip/details")
+            history.push("/trip/list")
         })
         .catch((err) => {
             console.log(err)

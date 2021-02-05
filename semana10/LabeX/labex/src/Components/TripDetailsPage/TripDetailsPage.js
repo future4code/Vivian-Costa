@@ -3,6 +3,26 @@ import axios from 'axios';
 import {useProtectedRoute} from '../../Hooks/useProtectedRoute'
 import { goToCreateTripPage } from "../../Router/Coordinator";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
+
+const Body = styled.div `
+display: flex;
+justify-content: space-between;
+margin: 2%;
+margin-left: 5%;
+margin-right: 5%;
+`
+const Title = styled.h1 `
+display: flex;
+text-align: center;
+`
+const Main = styled.div `
+// display: flex;
+// justify-content: space-between;
+//margin: 2%;
+//margin-left: 5%;
+//margin-right: 5%;
+`
 
 export function TripDetailsPage (ids){
 
@@ -35,11 +55,11 @@ export function TripDetailsPage (ids){
     console.log(ids.ids)
 
     return (
-        <div>
-            <h1>Detalhes da viagem</h1>
+        <Body>
+            <Title>Detalhes da viagem</Title>
             {candidatos.map ((e) => {
                 return(
-                <div>
+                <Main>
                     <h2>Candidatos</h2>
                 {/* <h4>{e.id}</h4> */}
                 <h4>{e.planet}</h4>
@@ -47,11 +67,11 @@ export function TripDetailsPage (ids){
                 <h4>{e.date}</h4>
                 <h4>{e.name}</h4>
                 <h4>{e.description}</h4>
-                </div>
+                </Main>
                 )
            })}
         < button onClick={() => goToCreateTripPage(history)}>Criar Viagem </button>
        
-        </div>
+        </Body>
     )
 }

@@ -4,6 +4,21 @@ import { useHistory } from 'react-router-dom';
 import { goToDetailsTripPage, goToFormPage } from "../../Router/Coordinator";
 import { FormPage } from '../ApplicationFormPage/FormPage';
 import { TripDetailsPage } from '../TripDetailsPage/TripDetailsPage';
+import styled from "styled-components";
+
+const BodyContainer = styled.div `
+margin-right: 10%;
+`
+const MainContainer = styled.div `
+ border: solid 10px black
+ margin-right: 100%;
+
+`
+const Paragraph = styled.p `
+margin-left: 5%;
+//border: solid 1px black
+`
+
 
 export  function ListTripe (){
     const [allTrip, setAlltrip] = useState([])
@@ -37,24 +52,24 @@ export  function ListTripe (){
       
 
     return (
-        <div>
+        <BodyContainer>
             {loadList()}
             {allTrip.map((trip) => {
                 return(
-                    <div>
-                    <h2>{trip.name}</h2>
-                    <p>Planeta: {trip.planet}</p>
-                    <p>Descricao: {trip.description}</p>
-                    <p>Por {trip.durationInDays} dias</p>
-                    <p>Partida: {trip.date}</p>
+                    <MainContainer>
+                    <Paragraph>{trip.name}</Paragraph>
+                    <Paragraph>Planeta: {trip.planet}</Paragraph>
+                    <Paragraph>Descricao: {trip.description}</Paragraph>
+                    <Paragraph>Por {trip.durationInDays} dias</Paragraph>
+                    <Paragraph>Partida: {trip.date}</Paragraph>
                     <button onClick={() => goToFormPage(history) || getId(trip.id)}>Cadastre-se</button>
                     <button onClick={() => getId(trip.id)|| setDetails(!details)}>Detalhes</button>
-                    </div>
+                    </MainContainer>
                 )
                
             }) }
             
             
-        </div>
+        </BodyContainer>
     )
 }
