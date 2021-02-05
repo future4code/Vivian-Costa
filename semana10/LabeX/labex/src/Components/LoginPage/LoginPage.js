@@ -23,7 +23,7 @@ export function LoginPage (){
         const token = localStorage.getItem("token");
 
         if(token) {
-            history.push("/trip/details")
+            history.push("/trip/list")
         }  
     }, [history]);
 

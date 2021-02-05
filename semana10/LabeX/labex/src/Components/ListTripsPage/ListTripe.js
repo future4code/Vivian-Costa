@@ -1,10 +1,14 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
-import { goToFormPage } from "../../Router/Coordinator";
+import { goToDetailsTripPage, goToFormPage } from "../../Router/Coordinator";
+import { FormPage } from '../ApplicationFormPage/FormPage';
+import { TripDetailsPage } from '../TripDetailsPage/TripDetailsPage';
 
 export  function ListTripe (){
     const [allTrip, setAlltrip] = useState([])
+    const [ids, setIds] = useState("")
+    const [details, setDetails] = useState(false)
     const history = useHistory();
     
 
@@ -18,19 +22,33 @@ export  function ListTripe (){
         })
 
     }, []) 
+
+    const getId = (id) => {
+        setIds(id)
+    }
+
+
+    const loadList = () => {
+        if (details) {
+          return (<TripDetailsPage ids={ids} />)
+        } 
        
+    }
+      
 
     return (
         <div>
+            {loadList()}
             {allTrip.map((trip) => {
                 return(
                     <div>
-                    <h1>Pagina de listar viagem</h1>
-                    <p>{trip.name}</p>
+                    <h2>{trip.name}</h2>
                     <p>Planeta: {trip.planet}</p>
+                    <p>Descricao: {trip.description}</p>
                     <p>Por {trip.durationInDays} dias</p>
                     <p>Partida: {trip.date}</p>
-                    <button onClick={() => goToFormPage(history)}>Cadastre-se</button>
+                    <button onClick={() => goToFormPage(history) || getId(trip.id)}>Cadastre-se</button>
+                    <button onClick={() => getId(trip.id)|| setDetails(!details)}>Detalhes</button>
                     </div>
                 )
                

@@ -19,5 +19,5 @@ export const goToHomePage = (history) => {
   };  
 
   export const goToDetailsTripPage = (history) => {
-    history.push("/trip/details");
+    history.push("/");
   };  
