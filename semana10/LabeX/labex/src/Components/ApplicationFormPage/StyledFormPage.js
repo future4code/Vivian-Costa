@@ -1,31 +1,28 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.div `
-display: flex;
+background-image: url('https://i.pinimg.com/474x/0c/66/2c/0c662c3afd52637d33991d361b2c6f28.jpg');
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Changa:wght@300&family=Francois+One&display=swap');
+font-family: 'Francois One', sans-serif;
 `
 export const TitleForm = styled.h1 `
 text-align: center;
+font-family: 'Francois One', sans-serif;
 padding-botton: 5%;
 `
-export const ImageForm = styled.img `
-position: relative;
-right: 0px;
-width: 300px;
-height: 300px;
-padding: 15%;
-display: flex;
-`
+
 export const MainForm = styled.form `
-border-radius: 5px;
+border-radius: 10px;
 background-color: #f2f2f2;
 box-sizing: border-box;
 text-align:center;
-width: 600px;
-height: 90vh;
-padding: 20px;
-margin-left: 2%;
-margin-right: 17%;
-margin-bottom: 40px;
+font-family: 'Francois One', sans-serif;
+margin-top: 3%;
+margin: auto;
+width: 40%;
+float: center;
+padding: 10px;
+
 `
 export const InputTextForm = styled.input `
 width: 50%;

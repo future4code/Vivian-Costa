@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { FormContainer, MainForm, TitleForm, InputTextForm, InputTextArea, ButtonForm, ImageForm, Countries } from "./StyledFormPage";
+import { FormContainer, MainForm, TitleForm, InputTextForm, InputTextArea, ButtonForm, Countries } from "./StyledFormPage";
 import useForm from '../../Hooks/useForm'
 import axios from "axios";
 
@@ -111,7 +111,7 @@ export function FormPage () {
 
                 
                 <label for="id"></label>
-                <option></option>
+                
                 <Countries name={"trip"} onChange={onchange} value={form.trip}>
                 {trips && trips.map((trip) => {
                     return(
@@ -131,7 +131,6 @@ export function FormPage () {
                 />
             <ButtonForm>Enviar</ButtonForm>
             </MainForm>
-            <ImageForm src='https://freesvg.org/img/Cartoon-Astronaut.png' />
         </FormContainer>
        
     )

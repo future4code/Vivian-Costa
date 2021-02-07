@@ -31,7 +31,7 @@ export function TripDetailsPage (ids){
         <Body>
             <  ButtonDetails onClick={() => goToCreateTripPage(history)}>Criar Viagem </ ButtonDetails>
             <  ButtonDetails onClick={() =>  goToTripsPage(history)}>Lista de Destinos </ ButtonDetails>
-            <Title>Detalhes da viagem</Title>
+            <Title>Detalhes da viagem - Candidatos</Title>
             {candidatos.map ((e) => {
                 return(
                     <Main>

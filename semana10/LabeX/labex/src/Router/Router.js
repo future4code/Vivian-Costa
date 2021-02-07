@@ -9,11 +9,10 @@ import { CreateTripPage } from "../Components/CreateTripPage/CreateTripPage";
 import { LoginPage } from "../Components/LoginPage/LoginPage";
 import { TripDetailsPage } from "../Components/TripDetailsPage/TripDetailsPage";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { StyledAppbar } from "../Components/AppBar/StyledAppBar";
 
 const AppContainer = styled.div `
-@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Changa:wght@300&family=Francois+One&display=swap');
 background: #F5F5F5;
-font-family: 'Francois One', sans-serif;
 margin: 0;
 padding: 0;
 overflow: auto;

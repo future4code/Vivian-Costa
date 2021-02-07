@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.div `
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Changa:wght@300&family=Francois+One&display=swap');
+font-family: 'Francois One', sans-serif;
 background-color: #F5F5F5;
 color:#000;
 `

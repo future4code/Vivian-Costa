@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Body = styled.div `
 background-image: url('https://i.pinimg.com/474x/0c/66/2c/0c662c3afd52637d33991d361b2c6f28.jpg');
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Changa:wght@300&family=Francois+One&display=swap');
+font-family: 'Francois One', sans-serif;
 
 `
 export const Title = styled.h1 `
