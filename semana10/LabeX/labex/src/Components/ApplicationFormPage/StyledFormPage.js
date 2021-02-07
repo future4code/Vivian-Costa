@@ -25,6 +25,7 @@ height: 90vh;
 padding: 20px;
 margin-left: 2%;
 margin-right: 17%;
+margin-bottom: 40px;
 `
 export const InputTextForm = styled.input `
 width: 50%;

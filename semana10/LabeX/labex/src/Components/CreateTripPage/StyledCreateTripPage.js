@@ -2,7 +2,6 @@ import React from 'react'
 import styled from "styled-components";
 
 export const CreateTripContainer = styled.div `
-display: flex;
 background-image: url('https://i.pinimg.com/474x/0c/66/2c/0c662c3afd52637d33991d361b2c6f28.jpg')
 
 `
@@ -13,14 +12,16 @@ padding-botton: 5%;
 
 export const MainCriateTrip = styled.form `
 border-radius: 10px;
-background-color: #f2f2f2;
-box-sizing: border-box;
 text-align:center;
-width: 40%;
-height: 60%;
-padding: 2% 2%;
-margin-left: 27%;
-margin-right: 27%;
+background-color: rgb(242, 243, 247);
+border: solid 1px black;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 3%;
+margin: auto;
+width: 50%;
+float: center;
+padding: 10px;
 `
 
 export const InputTextCriateTrip = styled.input `
@@ -63,17 +64,19 @@ float: center;
 }
 `
 export const GoToDetailsTrip = styled.button `
-background-color: #4CAF50;
-display: flex;
-color: white;
-width: 10%;
-height: 100px;
-padding: 12px 20px;
+whidth: 10%;
+text-align: center;
+background-color:#f2f2f8;
+transition-duration: 0.4s;
+margin: auto;
+width: 100%;
+padding: 10px;
 border: none;
-border-radius: 4px;
+border-radius: 6px;
 cursor: pointer;
 float: center;
 :hover {
-    background-color: #45a049;
+background-color:  #1a237e;
+color:#FFFFFF;
 }
 `

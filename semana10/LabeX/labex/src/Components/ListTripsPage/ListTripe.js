@@ -1,23 +1,9 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
-import { goToDetailsTripPage, goToFormPage } from "../../Router/Coordinator";
-import { FormPage } from '../ApplicationFormPage/FormPage';
+import { goToFormPage } from "../../Router/Coordinator";
 import { TripDetailsPage } from '../TripDetailsPage/TripDetailsPage';
-import styled from "styled-components";
-
-const BodyContainer = styled.div `
-margin-right: 10%;
-`
-const MainContainer = styled.div `
- border: solid 10px black
- margin-right: 100%;
-
-`
-const Paragraph = styled.p `
-margin-left: 5%;
-//border: solid 1px black
-`
+import { BodyContainer, Title, MainContainer, Paragraph, Button } from "./StyledListTrip";
 
 
 export  function ListTripe (){
@@ -53,22 +39,23 @@ export  function ListTripe (){
 
     return (
         <BodyContainer>
+            <Title>Próximas Viagens</Title>
             {loadList()}
             {allTrip.map((trip) => {
                 return(
                     <MainContainer>
-                    <Paragraph>{trip.name}</Paragraph>
-                    <Paragraph>Planeta: {trip.planet}</Paragraph>
-                    <Paragraph>Descricao: {trip.description}</Paragraph>
+                   <strong><Paragraph><h2>{trip.name}</h2></Paragraph></strong> 
+                    <Paragraph>Planeta: {trip.planet}</Paragraph>                   
                     <Paragraph>Por {trip.durationInDays} dias</Paragraph>
                     <Paragraph>Partida: {trip.date}</Paragraph>
-                    <button onClick={() => goToFormPage(history) || getId(trip.id)}>Cadastre-se</button>
-                    <button onClick={() => getId(trip.id)|| setDetails(!details)}>Detalhes</button>
+                    <Paragraph>Descricao: <br/>{trip.description}</Paragraph>
+                    <Button onClick={() => goToFormPage(history) || getId(trip.id)}>Cadastre-se</Button>
+                    <Button onClick={() => getId(trip.id)|| setDetails(!details)}>Detalhes</Button>
                     </MainContainer>
+                   
                 )
                
             }) }
-            
             
         </BodyContainer>
     )

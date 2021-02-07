@@ -1,45 +1,57 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { FormContainer, MainForm, TitleForm, InputTextForm, InputTextArea, ButtonForm, ImageForm, Countries } from "./StyledFormPage";
 import useForm from '../../Hooks/useForm'
 import axios from "axios";
 
 export function FormPage () {
-    const [form, onChange, clearlFields] = useForm({name: "", age: "", applicationText: "",
-    profession: "", country: "", id: ""})
-    const [allTrips, setAllTrips] = useState ([])
-    const [viagem, setViagem] = useState ([])
 
-    const applyToTrip = () => {
+    const [trips, setTrips] = useState ()
+    const [viagem, setViagem] = useState ()
+
+    useEffect(() => {
         axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/viviancosta-epps/trips")
         .then((res) => {
-            setViagem(res.data.trips)
+            setTrips(res.data.trips)
         })
         .catch((err) => {
             console.log(err)
         })
 
-    }
+    }, [])
 
-    const sendForm = (e) => {
+    const [form, onChange, clearlFields] = useForm({
+        name: "",
+        age: "", 
+        applicationText: "",
+        profession: "", 
+        country: "", 
+        trip: ""
+    })
+
+    const  sendForm = (e) => {
         e.preventDefault();
         console.log(form)
         clearlFields(); 
-       
+        appyToTrip()
+        setViagem()
+    }
 
-        let id = viagem.id
+    const appyToTrip = () => {
+        const body = {
+            name: form.name,
+            age: form.age,
+            applicationText: form.applicationText,
+            profession: form.profession, 
+            country: form.country, 
+        }
 
-        axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/viviancosta-epps/trips/${id}/apply`, {
-            headers: {
-                Authorization: "vivian-costa-epps",
-            }
-        })
+        axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/viviancosta-epps/trips/${form.trip}/apply`, body)
         .then((res) => {
-            setAllTrips(res.data.message)
-            applyToTrip(setAllTrips())
+            setViagem('sucesso')
         })
-        .catch(err => {
-            console.log
-            (err)
+        .catch((err) => {
+            console.log(err)
+            
         })
     }
 
@@ -78,7 +90,7 @@ export function FormPage () {
                 pattern={"^.{10,}"}
                 title={"O nome deve ter no mínimo 10 caracteres"}
                 />
-            <h4>Pais: </h4>
+            <h4>Pais de origem -  Escolha a viagem </h4>
                 <Countries
                 type='text'
                 name="country"
@@ -97,15 +109,16 @@ export function FormPage () {
                 <option>Venezuela</option>
                 </Countries>
 
-                <Countries>
-                <h4>Escolha a viagem: </h4>
-                {allTrips.map((trip) => {
+                
+                <label for="id"></label>
+                <option></option>
+                <Countries name={"trip"} onChange={onchange} value={form.trip}>
+                {trips && trips.map((trip) => {
                     return(
-                        <Countries>
-                        <option value="trip.id">{trip.name}</option>
-                        </Countries>
-                    )
-                   
+                        <option key={trip.id} value={trip.id} >
+                        {trip.name} - {trip.planet}
+                        </option> 
+                    ) 
                 })}
                 </Countries>
 

@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { LoginContainer, MainLogin, InputTextLogin, ButtonLogin, TitleLogin } from "./StyledLoginPage";
 import axios from 'axios';
-import {useProtectedRoute} from '../../Hooks/useProtectedRoute'
 import { useHistory } from 'react-router-dom';
 
 export function LoginPage (){
@@ -11,19 +10,17 @@ export function LoginPage (){
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
-       // setEmail("");
     }
 
     const handlePassword = (e) => {
         setPassword(e.target.value);
-       // setPassword("");
     }
 
     useEffect (() => {
         const token = localStorage.getItem("token");
 
         if(token) {
-            history.push("/trip/list")
+            history.push("/trip/details")
         }  
     }, [history]);
 
@@ -36,7 +33,7 @@ export function LoginPage (){
         axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/viviancosta-epps/login', body)
         .then((res) => {
             localStorage.setItem("token", res.data.token);
-            history.push("/trip/list")
+            history.push("/trip/details")
         })
         .catch((err) => {
             console.log(err)

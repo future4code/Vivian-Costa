@@ -3,7 +3,7 @@ import {AppBarContainer} from './StyledAppBar'
 import {NavBarContainer} from "./StyledAppBar";
 import {ButtonAppBar}  from "./StyledAppBar"
 import { useHistory } from "react-router-dom";
-import { goToHomePage, goToFormPage, goToLoginPage, goToTripsPage, goToDetailsTripPage  } from "../../Router/Coordinator";
+import { goToHomePage, goToFormPage, goToLoginPage, goToTripsPage } from "../../Router/Coordinator";
 
 
 

@@ -13,7 +13,6 @@ export function CreateTripPage (){
 
     const createTrip = (e) => {
         e.preventDefault();
-        console.log(form)
         clearlFields();
 
         axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/viviancosta-epps/trips', form, {

@@ -11,7 +11,9 @@ import { TripDetailsPage } from "../Components/TripDetailsPage/TripDetailsPage";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const AppContainer = styled.div `
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Changa:wght@300&family=Francois+One&display=swap');
 background: #F5F5F5;
+font-family: 'Francois One', sans-serif;
 margin: 0;
 padding: 0;
 overflow: auto;
