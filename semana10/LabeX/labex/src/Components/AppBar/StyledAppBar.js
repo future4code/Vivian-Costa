@@ -1,7 +1,8 @@
-import React from 'react';
 import styled from 'styled-components'
 
 export const AppBarContainer = styled.div `
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Changa:wght@300&family=Francois+One&display=swap');
+font-family: 'Francois One', sans-serif;
 display: flex;
 justify-content: space-around;
 background-color: #000051;

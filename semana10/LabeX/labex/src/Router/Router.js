@@ -9,6 +9,7 @@ import { CreateTripPage } from "../Components/CreateTripPage/CreateTripPage";
 import { LoginPage } from "../Components/LoginPage/LoginPage";
 import { TripDetailsPage } from "../Components/TripDetailsPage/TripDetailsPage";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { StyledAppbar } from "../Components/AppBar/StyledAppBar";
 
 const AppContainer = styled.div `
 background: #F5F5F5;

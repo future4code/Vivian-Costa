@@ -1,3 +1,65 @@
+
+# PROJETO LABEX - EMBARQUE NESSA AVENTURA!! 🚀 🌎
+
+<h4 align='center'>
+👉 Status: 🚧 Finalizado 🚧
+</h4>
+
+<br />
+
+### ✨ Funcionamento:
+- [x] Página Home com intro e menu de navegação
+- [x] Página com formulário para os candidatos se inscreverem para a viagem escolhida
+- [x] Página de login com verificação de e-mail e senha
+- [x] Página para o admin criar uma nova viagem e listar os candidatos que se increveram em cada viagem
+
+### 💻 Tecnologias:
+As seguintes tecnologias foram usadas na construção do projeto:
+- [React](https://pt-br.reactjs.org/)
+- [JavaScript](https://www.javascript.com/)
+
+### 🎨 Layout:
+- Styled-componentes
+
+### 🛠 Ferramentas:
+As seguintes ferramentas foram usadas na construção do projeto:
+- [Fluxograma](https://wireframe.cc/)
+- [Wireframe](https://wireframe.cc/)
+
+### 🔓 Informações de acesso:
+
+- usuário: astrodev@gmail.com
+- senha: 123456
+
+### 🔗 Link do Surge:
+
+
+
+### 📷 Prints:
+
+<img src="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

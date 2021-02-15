@@ -2,15 +2,20 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import { goToFormPage } from "../../Router/Coordinator";
+import { TripDetailsPage } from '../TripDetailsPage/TripDetailsPage';
+import { BodyContainer, Title, MainContainer, Paragraph, Button } from "./StyledListTrip";
+
 
 export  function ListTripe (){
     const [allTrip, setAlltrip] = useState([])
+    const [ids, setIds] = useState("")
+    const [details, setDetails] = useState(false)
+    const history = useHistory();
     
 
     useEffect(() => {
         axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/viviancosta-epps/trips")
         .then((res) => {
-            alert('Efetuado com sucesso')
             setAlltrip(res.data.trips)
         })
         .catch((err) => {
@@ -18,31 +23,40 @@ export  function ListTripe (){
         })
 
     }, []) 
-       
-    
 
-    const history = useHistory()
-    const goToForm = () => {
-        history.push("//application-form")
+    const getId = (id) => {
+        setIds(id)
     }
 
+
+    const loadList = () => {
+        if (details) {
+          return (<TripDetailsPage ids={ids} />)
+        } 
+       
+    }
+      
+
     return (
-        <div>
+        <BodyContainer>
+            <Title>Próximas Viagens</Title>
+            {loadList()}
             {allTrip.map((trip) => {
                 return(
-                    <div>
-                    <h1>Pagina de listar viagem</h1>
-                    <p>{trip.name}</p>
-                    <p>Planeta: {trip.planet}</p>
-                    <p>Por {trip.durationInDays} dias</p>
-                    <p>Partida: {trip.date}</p>
-                    <button onClick={ goToForm}>Cadastre-se</button>
-                    </div>
+                    <MainContainer>
+                   <strong><Paragraph><h2>{trip.name}</h2></Paragraph></strong> 
+                    <Paragraph>Planeta: {trip.planet}</Paragraph>                   
+                    <Paragraph>Por {trip.durationInDays} dias</Paragraph>
+                    <Paragraph>Partida: {trip.date}</Paragraph>
+                    <Paragraph>Descricao: <br/>{trip.description}</Paragraph>
+                    <Button onClick={() => goToFormPage(history) || getId(trip.id)}>Cadastre-se</Button>
+                    <Button onClick={() => getId(trip.id)|| setDetails(!details)}>Detalhes</Button>
+                    </MainContainer>
+                   
                 )
                
             }) }
             
-            
-        </div>
+        </BodyContainer>
     )
 }
