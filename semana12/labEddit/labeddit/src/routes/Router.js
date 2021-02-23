@@ -3,23 +3,29 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { FeedPage } from '../pages/FeedPage/FeedPage';
 import { LoginPage } from '../pages/LoginPage/LoginPage';
 import { PostPage } from '../pages/PostPage/PostPage';
-import { RegisterPage } from '../pages/RegisterPage/RegisterPage';
+import { SingUpPage } from '../pages/SingUpPage/SingUpPage';
+import { ErrorPage } from "../pages/ErrorPage/ErrorPage";
+import Header from '../components/Header/Header';
 
 export default function Router () {
     return(
         <BrowserRouter>
+            <Header />
             <Switch>
                 <Route exact path='/cadastro'>
-                    <RegisterPage />
+                    <SingUpPage />
                 </Route>
-                <Route exact path='/'>
+                <Route exact path='/login'>
                     <LoginPage />
                 </Route>
-                <Route exact path='/feed'>
+                <Route exact path='/post/:id'>
                     <PostPage />
                 </Route>
-                <Route exact path='/posts'>
+                <Route exact path='/'>
                     <FeedPage />
+                </Route>
+                <Route>
+                    <ErrorPage />
                 </Route>
             </Switch>
         </BrowserRouter>
