@@ -3,26 +3,30 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { InputsContainer, SignUpFormContainer } from "./styled";
+import { signUp } from '../../services/user'
 
-export function SingUpForm({ setRightButtonText }) {
+export function SingUpForm({setRightButtonText}) {
   const history = useHistory();
   const [form, onChange, clear] = useForm({
-    name: "",
+    username: "",
     email: "",
     password: "",
   });
 
-  const onSubmitForm = (event) => {
-    event.preventDefault();
+  const onSubmitForm = (e) => {
+    console.log(form)
+    e.preventDefault();
+    signUp(form, clear, history, setRightButtonText)
   };
+
 
   return (
     <form onSubmit={onSubmitForm}>
       <SignUpFormContainer>
         <InputsContainer>
           <TextField
-            value={form.name}
-            name={"name"}
+            value={form.username}
+            name={"username"}
             onChange={onChange}
             label={"Nome"}
             variant={"outlined"}

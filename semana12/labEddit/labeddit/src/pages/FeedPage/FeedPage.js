@@ -1,12 +1,36 @@
-import React from 'react'
+import React from "react";
+import { useProtectedPage } from "../../hooks/useProtectedPage";
+import { useRequestData } from "../../hooks/useRequestData";
+import { BASE_URL } from "../../constants/url";
+import { FeedPageContainer } from "./styled";
 
-export function FeedPage () {
+export function FeedPage() {
+  useProtectedPage();
+  const feeds = useRequestData([], `${BASE_URL}/posts`);
+  console.log(feeds);
 
-    return(
-        <div>
-            <h1>A página de feed deverá mostrar todos os posts, além de um formulário para a criação de post. 
-            O formulário possui apenas o campo de texto. Cada post mostrará o nome de usuário que postou, o texto do post, o número de votos (positivo ou negativo) e o número de comentários. Caso o usuário tenha votado positiva ou negativamente, isso deverá estar indicado. Todas essa informações serão fornecidas pela API.
-            </h1>
-        </div>
-    )
+  const allFeed = feeds.map((feed) => {
+    return (
+      <FeedPageContainer>
+        <p>Nome usuario: {feed.username}</p>
+        <p>Texto: {feed.text}</p>
+        <p>Votos: {feed.userVoteDirection}</p>
+        <p>Total de comentarios: {feed.commentsCount}</p>
+        <p>total de votos: {feed.votesCount}</p>
+        <p>{feed.id}</p>
+      </FeedPageContainer>
+    );
+  });
+
+  return <div>
+      <textarea
+      name="text"
+      placeholder="crie seu post aqui!"
+      >
+      </textarea>
+      <button>Criar Post</button>
+      {allFeed}
+      
+      </div>;
+ 
 }

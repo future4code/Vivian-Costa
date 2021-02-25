@@ -1,15 +1,18 @@
 import React from 'react'
-//import useUnprotectedPage from '../../hooks/useUnProtectedPage'
-import { ScreenContainer, SignUpFormContainer } from './styled'
+import { LogoImage, ScreenContainer, SignUpFormContainer } from './styled'
 import { SingUpForm } from './SingUpForm'
+import  rdt   from '../../assets/rdt.png'
+import { useUnprotectedPage } from '../../hooks/useUnprotectedPage'
 
-export function SingUpPage  () {
-    //useUnprotectedPage()
+
+export function SingUpPage  ({setRightButtonText}) {
+  useUnprotectedPage()
 
     return(
         <ScreenContainer>
+             <LogoImage src={rdt} />
             <SignUpFormContainer />
-            <SingUpForm />
+            <SingUpForm setRightButtonText={setRightButtonText} />
         </ScreenContainer>
     )
 }
