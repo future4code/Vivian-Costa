@@ -12,7 +12,7 @@ export function useRequestData(initialData, url) {
         },
       })
       .then((res) => {
-        setData(res.data.posts);
+        setData(res.data);
       })
       .catch((err) => {
         console.log(err);

@@ -1,36 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
-import { useRequestData } from "../../hooks/useRequestData";
 import { BASE_URL } from "../../constants/url";
 import { FeedPageContainer } from "./styled";
+import { useHistory } from "react-router-dom";
+import { goToPostPage } from "../../routes/Coordinator";
+import axios from "axios";
+import { FormFeed } from "./FormFeed";
 
 export function FeedPage() {
   useProtectedPage();
-  const feeds = useRequestData([], `${BASE_URL}/posts`);
-  console.log(feeds);
+  const history = useHistory();
+
+
+  const [feeds, setFeeds] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}/posts`, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        setFeeds(res.data.posts);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const postPage = (id) => {
+    goToPostPage(history, id);
+  };
 
   const allFeed = feeds.map((feed) => {
     return (
-      <FeedPageContainer>
-        <p>Nome usuario: {feed.username}</p>
-        <p>Texto: {feed.text}</p>
+      <FeedPageContainer key={feed.id} onClick={() => postPage(feed.id)}>
+        <p>Usuario: {feed.username} </p>
+        <p>Postagem: {feed.text}</p>
         <p>Votos: {feed.userVoteDirection}</p>
-        <p>Total de comentarios: {feed.commentsCount}</p>
-        <p>total de votos: {feed.votesCount}</p>
-        <p>{feed.id}</p>
+        <p>Total de Comentarios: {feed.commentsCount}</p>
+        <p>Total de Votos {feed.votesCount} </p>
       </FeedPageContainer>
     );
   });
 
-  return <div>
-      <textarea
-      name="text"
-      placeholder="crie seu post aqui!"
-      >
-      </textarea>
-      <button>Criar Post</button>
+  return (
+    <FeedPageContainer>
+      <FormFeed />
       {allFeed}
-      
-      </div>;
- 
+    </FeedPageContainer>
+  );
 }
