@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { BASE_URL } from "../../constants/url";
-import { FeedPageContainer } from "./styled";
+import { FeedContainer, FeedHeader,FeedFooter, FeedCard, FeedText } from "./styled";
 import { useHistory } from "react-router-dom";
 import { goToPostPage } from "../../routes/Coordinator";
 import axios from "axios";
@@ -35,20 +35,31 @@ export function FeedPage() {
 
   const allFeed = feeds.map((feed) => {
     return (
-      <FeedPageContainer key={feed.id} onClick={() => postPage(feed.id)}>
-        <p>Usuario: {feed.username} </p>
-        <p>Postagem: {feed.text}</p>
+      <FeedCard>
+        <div key={feed.id} onClick={() => postPage(feed.id)}>
+          <FeedHeader>
+          <h1>{feed.username} </h1>
+          </FeedHeader>
+          <FeedText>
+          <p>{feed.text}</p>
+          </FeedText>
+        
+        <FeedFooter>
         <p>Votos: {feed.userVoteDirection}</p>
-        <p>Total de Comentarios: {feed.commentsCount}</p>
+        <p>Comentarios: {feed.commentsCount}</p>
         <p>Total de Votos {feed.votesCount} </p>
-      </FeedPageContainer>
+        </FeedFooter>
+        
+      </div>
+      </FeedCard>
+    
     );
   });
 
   return (
-    <FeedPageContainer>
+    <FeedContainer>
       <FormFeed />
       {allFeed}
-    </FeedPageContainer>
+    </FeedContainer>
   );
 }

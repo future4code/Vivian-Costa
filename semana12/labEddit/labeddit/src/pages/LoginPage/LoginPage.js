@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { goToSingUpPage } from "../../routes/Coordinator";
 import { LogoImage, ScreenContainer,SignUpButtonContainer,} from "./styled";
-import rdt from "../../assets/rdt.png";
+import rt from "../../assets/rt.png";
 import { Button } from "@material-ui/core";
 import { LoginForm } from "./LoginForm";
 import { useUnprotectedPage } from "../../hooks/useUnprotectedPage";
@@ -14,7 +14,7 @@ export function LoginPage({setRightButtonText}) {
 
   return (
     <ScreenContainer>
-      <LogoImage src={rdt} />
+      <LogoImage src={rt} />
       <LoginForm setRightButtonText={setRightButtonText} />
 
       <SignUpButtonContainer>

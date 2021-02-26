@@ -1,6 +1,7 @@
 import React from "react";
 import useForm from "../../hooks/useForm";
 import { createPost } from "../../services/feed";
+import { CommentContainer, CommentText, CommentTitle, Button } from "./styled";
 
 export function FormFeed() {
   const [form, onChange, clear] = useForm({
@@ -15,26 +16,25 @@ export function FormFeed() {
   }
 
   return (
-    <form onSubmit={onSubmitForm}>
-      <h1>Pagina de Feed</h1>
-      <textarea 
+    <CommentContainer onSubmit={onSubmitForm}>
+      <CommentTitle 
       name="title"
       value={form.title}
       onChange={onChange}
       placeholder="crie o titulo do seu post aqui!"
       label={'Titulo'}
       >
-      </textarea>
+      </CommentTitle>
 
-      <textarea 
+      <CommentText 
       name="text"
       value={form.text}
       onChange={onChange}
       placeholder="crie seu post aqui!"
       label={'Texto'}
       >
-      </textarea>
-      <button>Criar Post</button>
-    </form>
+      </CommentText>
+      <Button>Criar Post</Button>
+    </CommentContainer>
   );
 }

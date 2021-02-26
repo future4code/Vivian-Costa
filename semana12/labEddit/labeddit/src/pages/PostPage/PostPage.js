@@ -5,12 +5,13 @@ import { BASE_URL } from "../../constants/url";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { useRequestData } from "../../hooks/useRequestData";
 import { FormPost } from "./FormPost";
-import { MainContainer, PostContainer } from "./styled";
+import { PostHeader, PostCard, PostContainer, PostText, PostFooter } from "./styled";
 
 export function PostPage() {
   useProtectedPage();
   const params = useParams();
   const [posts, setposts] = useState({});
+  const [userComments, setUserComments] = useState([]);
 
   useEffect(() => {
     axios
@@ -21,21 +22,56 @@ export function PostPage() {
       })
       .then((res) => {
         setposts(res.data.post);
+        setUserComments(res.data.post.comments);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
+ const getAllComments = userComments.map((comment) => {
+   return(
+     <PostCard>
+       <p key={comment.id}
+       commentId={comment.id}
+       postId={comment.id}
+       ></p>
+       <PostHeader>
+       <h2>{comment.username}</h2>
+       </PostHeader>
+       < PostText>
+       <p>{comment.text}</p>
+       </PostText>
+       <PostFooter>
+       <p>Total de Votos: {comment.votesCount}</p>
+       </PostFooter>
+       
+       
+     </PostCard>
+   )
+
+ })
+
+ console.log(posts)
  
   return (
     <PostContainer>
-      <MainContainer>
-        <p>{posts && posts.username}</p>
+      <PostCard>
+        <PostHeader>
+        <h1>{posts && posts.username}</h1>
+        </PostHeader>
+        < PostText>
         <p>{posts && posts.text}</p>
-        <p>{posts && posts.commentsCount}</p>
-        <p>{posts && posts.userVoteDirection}</p>
-      </MainContainer>
+        </PostText>
+        <PostFooter>
+        <p>Comentarios: {posts && posts.commentsCount}</p>
+        <p>Votos: {posts && posts.userVoteDirection}</p>
+        </PostFooter>
+        
+      </PostCard>
+      <di>
+        {getAllComments}
+      </di>
       <FormPost />
     </PostContainer>
   );

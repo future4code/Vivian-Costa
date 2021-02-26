@@ -1,7 +1,7 @@
 import React from 'react'
 import { LogoImage, ScreenContainer, SignUpFormContainer } from './styled'
 import { SingUpForm } from './SingUpForm'
-import  rdt   from '../../assets/rdt.png'
+import  rt   from '../../assets/rt.png'
 import { useUnprotectedPage } from '../../hooks/useUnprotectedPage'
 
 
@@ -10,7 +10,7 @@ export function SingUpPage  ({setRightButtonText}) {
 
     return(
         <ScreenContainer>
-             <LogoImage src={rdt} />
+             <LogoImage src={rt} />
             <SignUpFormContainer />
             <SingUpForm setRightButtonText={setRightButtonText} />
         </ScreenContainer>

@@ -3,6 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/url";
 import useForm from "../../hooks/useForm";
+import { CommentPostContainer, CommentPostText, Button } from "./styled";
 
 export function FormPost() {
   const [form, onChange, clear] = useForm({ text: "" });
@@ -30,16 +31,16 @@ export function FormPost() {
   };
 
   return (
-    <form onSubmit={submitForm}>
-      <textarea
+    <CommentPostContainer onSubmit={submitForm}>
+      <CommentPostText
         name={"text"}
         key={form.id}
         value={form.text}
         onChange={onChange}
         placeholder="digite seu comentario aqui"
         required
-      ></textarea>
-      <button>Comentar Post</button>
-    </form>
+      ></CommentPostText>
+      < Button>Comentar Post</ Button>
+    </CommentPostContainer>
   );
 }
