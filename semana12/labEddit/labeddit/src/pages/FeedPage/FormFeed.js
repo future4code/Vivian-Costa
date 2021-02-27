@@ -1,4 +1,5 @@
-import React from "react";
+import { CircularProgress } from "@material-ui/core";
+import React, { useState } from "react";
 import useForm from "../../hooks/useForm";
 import { createPost } from "../../services/feed";
 import { CommentContainer, CommentText, CommentTitle, Button } from "./styled";
@@ -8,10 +9,11 @@ export function FormFeed() {
     text: "",
     title: "",
   });
+  const [isLoading, setIsLoading] = useState(false)
 
   const onSubmitForm = (e) => {
       e.preventDefault()
-      createPost(form, clear)
+      createPost(form, clear, setIsLoading)
 
   }
 
@@ -34,7 +36,7 @@ export function FormFeed() {
       label={'Texto'}
       >
       </CommentText>
-      <Button>Criar Post</Button>
+      <Button>{isLoading? <CircularProgress color={"inherit"} size={24}/> : <> Postar</>}</Button>
     </CommentContainer>
   );
 }

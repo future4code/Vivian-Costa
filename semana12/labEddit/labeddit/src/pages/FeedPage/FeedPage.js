@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { goToPostPage } from "../../routes/Coordinator";
 import axios from "axios";
 import { FormFeed } from "./FormFeed";
+import { Loading } from "../../components/Loading/Loading";
 
 export function FeedPage() {
   useProtectedPage();
@@ -58,8 +59,10 @@ export function FeedPage() {
 
   return (
     <FeedContainer>
+     
       <FormFeed />
       {allFeed}
+      {allFeed.length >0? allFeed : <Loading />}
     </FeedContainer>
   );
 }

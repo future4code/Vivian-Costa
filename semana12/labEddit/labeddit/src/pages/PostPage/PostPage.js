@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Loading } from "../../components/Loading/Loading";
+import { LoadingContainer } from "../../components/Loading/styles";
 import { BASE_URL } from "../../constants/url";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { useRequestData } from "../../hooks/useRequestData";
@@ -71,6 +73,7 @@ export function PostPage() {
       </PostCard>
       <di>
         {getAllComments}
+        {getAllComments.length >0? getAllComments : <Loading />}
       </di>
       <FormPost />
     </PostContainer>

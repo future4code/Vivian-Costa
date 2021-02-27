@@ -2,7 +2,8 @@ import axios from "axios"
 import { BASE_URL } from "../constants/url"
 
 
- export const createPost = (body, clear) => {
+ export const createPost = (body, clear, setIsLoading) => {
+  setIsLoading(true)
     axios.post(`${BASE_URL}/posts`, body,  {
       headers: {
           Authorization: localStorage.getItem("token")
@@ -13,6 +14,7 @@ import { BASE_URL } from "../constants/url"
       clear()  
     })
     .catch((err) => {
+      setIsLoading(false)
       alert(err.message)
     })
 }

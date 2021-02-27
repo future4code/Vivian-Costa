@@ -1,5 +1,5 @@
-import { Button,TextField } from "@material-ui/core";
-import React from "react";
+import { Button,CircularProgress,TextField } from "@material-ui/core";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { InputsContainer, SignUpFormContainer } from "./styled";
@@ -12,11 +12,12 @@ export function SingUpForm({setRightButtonText}) {
     email: "",
     password: "",
   });
+  const [isLoading, setIsLoading] = useState(false)
 
   const onSubmitForm = (e) => {
     console.log(form)
     e.preventDefault();
-    signUp(form, clear, history, setRightButtonText)
+    signUp(form, clear, history, setRightButtonText, setIsLoading)
   };
 
 
@@ -64,7 +65,7 @@ export function SingUpForm({setRightButtonText}) {
           type={"submit"}
           fullWidth
         >
-            Fazer Cadastro
+           {isLoading? <CircularProgress color={"inherit"} size={24}/> : <> Fazer Cadastro</>}
         </Button>
       </SignUpFormContainer>
     </form>
