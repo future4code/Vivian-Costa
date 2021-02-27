@@ -7,7 +7,9 @@ export function ErrorPage() {
   return (
     <ErrorPageContainer>
       <ErrorImage src={error} />
-      <Typography color={'primary'} variant={'h4'} align={'center'}>Erro 404 - Página Não Encontrada</Typography>
+      <Typography color={"primary"} variant={"h4"} align={"center"}>
+        Erro 404 - Página Não Encontrada
+      </Typography>
     </ErrorPageContainer>
   );
 }

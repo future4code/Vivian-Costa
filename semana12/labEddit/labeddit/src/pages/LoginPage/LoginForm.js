@@ -5,18 +5,15 @@ import useForm from "../../hooks/useForm";
 import { login } from "../../services/user";
 import { useHistory } from "react-router-dom";
 
-
-export function LoginForm({setRightButtonText}) {
+export function LoginForm({ setRightButtonText }) {
   const [form, onChange, clear] = useForm({ email: "", password: "" });
-  const history = useHistory()
-  const [isLoading, setIsLoading] = useState(false)
+  const history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmitForm = (e) => {
     e.preventDefault();
     login(form, clear, history, setRightButtonText, setIsLoading);
   };
-
- 
 
   return (
     <LoginFormContainer>
@@ -53,7 +50,11 @@ export function LoginForm({setRightButtonText}) {
             color={"primary"}
             margin={"normal"}
           >
-            {isLoading? <CircularProgress color={"inherit"} size={24}/> : <> Fazer Login!</>}
+            {isLoading ? (
+              <CircularProgress color={"inherit"} size={24} />
+            ) : (
+              <> Fazer Login!</>
+            )}
           </Button>
         </InputsContainer>
       </form>

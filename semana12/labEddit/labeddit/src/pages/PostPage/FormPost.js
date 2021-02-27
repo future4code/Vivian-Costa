@@ -17,7 +17,7 @@ export function FormPost() {
         },
       })
       .then((res) => {
-        alert('Comentado com sucesso!', res.data);
+        alert("Comentado com sucesso!", res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -27,7 +27,7 @@ export function FormPost() {
   const submitForm = (e) => {
     e.preventDefault();
     createComment();
-    clear()
+    clear();
   };
 
   return (
@@ -40,7 +40,7 @@ export function FormPost() {
         placeholder="digite seu comentario aqui"
         required
       ></CommentPostText>
-      < Button>Comentar Post</ Button>
+      <Button>Comentar Post</Button>
     </CommentPostContainer>
   );
 }

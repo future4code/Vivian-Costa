@@ -1,6 +1,6 @@
 export const goToSingUpPage = (history) => {
   history.push("/cadastro");
-};  
+};
 
 export const goToFeedPage = (history) => {
   history.push("/");
@@ -8,8 +8,8 @@ export const goToFeedPage = (history) => {
 
 export const goToPostPage = (history, id) => {
   history.push(`/post/${id}`);
-}; 
+};
 
 export const goToLoginPage = (history) => {
   history.push("/login");
-};    
+};

@@ -1,15 +1,14 @@
 import { useEffect } from "react";
-import { useHistory } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 export const useProtectedRoute = () => {
-    const history = useHistory ();
+  const history = useHistory();
 
-    useEffect (() => {
-        const token = localStorage.getItem("token");
+  useEffect(() => {
+    const token = localStorage.getItem("token");
 
-        if (!token) {
-            history.push('/')
-        }
-    }, [history]);
+    if (!token) {
+      history.push("/");
+    }
+  }, [history]);
 };
-

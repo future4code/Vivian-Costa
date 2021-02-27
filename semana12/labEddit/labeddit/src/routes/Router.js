@@ -6,11 +6,11 @@ import { PostPage } from "../pages/PostPage/PostPage";
 import { SingUpPage } from "../pages/SingUpPage/SingUpPage";
 import { ErrorPage } from "../pages/ErrorPage/ErrorPage";
 
-export default function Router({setRightButtonText}) {
+export default function Router({ setRightButtonText }) {
   return (
     <Switch>
       <Route exact path="/login">
-        <LoginPage  setRightButtonText={setRightButtonText} />
+        <LoginPage setRightButtonText={setRightButtonText} />
       </Route>
       <Route exact path="/cadastro">
         <SingUpPage setRightButtonText={setRightButtonText} />

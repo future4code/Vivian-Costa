@@ -14,7 +14,10 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Header rightButtonText={rightButtonText} setRightButtonText={setRightButtonText} />
+        <Header
+          rightButtonText={rightButtonText}
+          setRightButtonText={setRightButtonText}
+        />
         <Router setRightButtonText={setRightButtonText} />
       </BrowserRouter>
     </ThemeProvider>

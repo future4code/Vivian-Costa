@@ -4,25 +4,24 @@ import Button from "@material-ui/core/Button";
 import { StyledTooBar } from "./styled";
 import { goToFeedPage, goToLoginPage } from "../../routes/Coordinator";
 import { useHistory } from "react-router-dom";
-import { useProtectedPage } from "../../hooks/useProtectedPage";
 
-export default function Header({rightButtonText, setRightButtonText}) {
+export default function Header({ rightButtonText, setRightButtonText }) {
   const token = localStorage.getItem("token");
   const history = useHistory();
- 
+
   const logout = () => {
-    localStorage.removeItem("token")
-  }
+    localStorage.removeItem("token");
+  };
 
   const rightButtonAction = () => {
-    if(token) {
-      logout()
-      setRightButtonText("Login")
-      goToLoginPage(history)
+    if (token) {
+      logout();
+      setRightButtonText("Login");
+      goToLoginPage(history);
     } else {
-      goToLoginPage(history)
+      goToLoginPage(history);
     }
-  }
+  };
 
   return (
     <AppBar position="static">
