@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "calculator": "node ex2.js",
-    "tasks": "node ex3.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Vivian Costa",
