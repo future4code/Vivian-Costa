@@ -6,7 +6,8 @@
   "scripts": {
     "build":"tsc",
     "start": "npm run build && node ./build/index.js",
-    "ex2": "npm run build && node ./build/ex2.js"
+    "ex2": "npm run build && node ./build/ex2.js",
+    "ex3": "npm run build && node ./build/ex3.js"
   },
   "keywords": [],
   "author": "Vivian",
