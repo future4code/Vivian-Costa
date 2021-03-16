@@ -1,0 +1,17 @@
+{
+  "name": "aula-dois",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build":"tsc",
+    "start": "npm run build && node ./build/index.js",
+    "ex2": "npm run build && node ./build/ex2.js"
+  },
+  "keywords": [],
+  "author": "Vivian",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.2.3"
+  }
+}
