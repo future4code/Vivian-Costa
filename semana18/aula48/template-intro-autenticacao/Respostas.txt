@@ -1,0 +1,10 @@
+Respostas
+
+Exercicio 1/a:
+
+Usar strings para representar ids é ótimo pois geram ids mais seguros.
+
+Exercicio 2/a:
+
+O codigo se conecta workBench e apos insere o id, email e password na 
+coluna de user.
