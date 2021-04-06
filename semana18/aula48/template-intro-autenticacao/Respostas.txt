@@ -8,3 +8,7 @@ Exercicio 2/a:
 
 O codigo se conecta workBench e apos insere o id, email e password na 
 coluna de user.
+
+Exercicio 3/a:
+
+Essa linha esta informando que o token que esta no .env é uma string.

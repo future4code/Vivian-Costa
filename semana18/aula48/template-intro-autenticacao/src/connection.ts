@@ -12,7 +12,7 @@ const connection = knex({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_SCHEMA,
 		multipleStatements: true
-  },
+  }
 });
 
 export default connection
