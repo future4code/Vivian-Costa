@@ -1,0 +1,6 @@
+CREATE TABLE register_user (
+id VARCHAR(64) PRIMARY KEY,
+name_user VARCHAR (64) NOT NULL,
+email VARCHAR(64) NOT NULL,
+password_user VARCHAR(64) NOT NULL
+);
