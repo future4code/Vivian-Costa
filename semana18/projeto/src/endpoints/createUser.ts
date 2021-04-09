@@ -1,9 +1,10 @@
+import { hash } from "../services/hashManager";
 import { Request, Response } from "express"
 import connection from "../connection"
 import insertUser from "../data/insertUser";
 import { generateToken } from "../services/authenticator";
 import generateId from "../services/idGenerator";
-import { registerUser } from "../types";
+import { user } from "../types";
 
 export default async function createUser(
     req: Request,
@@ -32,7 +33,9 @@ export default async function createUser(
 
         const id: string = generateId()
 
-        const newUser: registerUser = {id, name_user, email, password_user}
+        const cypherText = await hash (password_user)
+
+        const newUser: user = {id, name_user, email, password_user: cypherText}
 
         await connection('register_user')
         .insert(newUser)
