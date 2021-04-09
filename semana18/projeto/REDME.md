@@ -7,7 +7,7 @@ Esse produto nada mais é do que uma rede social, na qual os usuários podem div
 <hr />
 ### ✨ Funcionamento:
 - [x] Cadastro
-- [] Login
+- [x] Login
 - [] Informações do próprio perfil
 - [] Criar receitas
 - [] Seguir usuário
