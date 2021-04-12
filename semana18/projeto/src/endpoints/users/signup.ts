@@ -1,12 +1,12 @@
-import { hash } from "../services/hashManager";
+import { hash } from "../../services/hashManager";
 import { Request, Response } from "express"
-import connection from "../connection"
-import insertUser from "../data/insertUser";
-import { generateToken } from "../services/authenticator";
-import generateId from "../services/idGenerator";
-import { user } from "../types";
+import connection from "../../connection"
+import insertUser from "../../data/insertUser";
+import { generateToken } from "../../services/authenticator";
+import generateId from "../../services/idGenerator";
+import { user } from "../../types";
 
-export default async function createUser(
+export default async function signup(
     req: Request,
     res: Response
 ): Promise<void> {
@@ -33,9 +33,9 @@ export default async function createUser(
 
         const id: string = generateId()
 
-        const cypherText = await hash (password_user)
+        const cypherPassword = await hash (password_user)
 
-        const newUser: user = {id, name_user, email, password_user: cypherText}
+        const newUser: user = {id, name_user, email, password_user: cypherPassword}
 
         await connection('register_user')
         .insert(newUser)

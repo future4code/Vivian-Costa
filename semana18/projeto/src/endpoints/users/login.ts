@@ -1,8 +1,8 @@
-import { compare } from "../services/hashManager"
+import { compare } from "../../services/hashManager"
 import { Request, Response } from "express"
-import connection from "../connection"
-import { generateToken } from "../services/authenticator"
-import { userCredential } from "../types"
+import connection from "../../connection"
+import { generateToken } from "../../services/authenticator"
+import { userCredential } from "../../types"
 
 export default async function login(
     req: Request,
